@@ -312,7 +312,7 @@ impl ChunkByUkey {
   pub fn get_many_mut<const N: usize>(
     &mut self,
     ukeys: [&ChunkUkey; N],
-  ) -> Option<[&mut Chunk; N]> {
+  ) -> [Option<&mut Chunk>; N] {
     self.inner.get_many_mut(ukeys)
   }
 
@@ -382,7 +382,7 @@ impl ChunkGroupByUkey {
   pub fn get_many_mut<const N: usize>(
     &mut self,
     ukeys: [&ChunkGroupUkey; N],
-  ) -> Option<[&mut ChunkGroup; N]> {
+  ) -> [Option<&mut ChunkGroup>; N] {
     self.inner.get_many_mut(ukeys)
   }
 
